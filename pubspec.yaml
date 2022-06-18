@@ -2,12 +2,11 @@ name: cable
 description: A helper to get Ferry to the other side of your project.
 
 version: 0.0.1
-author: Raúl Mortes Illescas
 repository: https://github.com/rmortes/flutter_cable
 homepage: rmort.es
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.13.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -15,6 +14,8 @@ dependencies:
   ferry_flutter: ^0.5.4
   flutter:
     sdk: flutter
+  gql_http_link: ^0.4.0
+  provider: ^6.0.3
 
 dev_dependencies:
   flutter_test:
