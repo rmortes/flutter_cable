@@ -1,0 +1,26 @@
+// Based in https://github.com/microsoft/vscode-dev-containers/tree/v0.236.0/containers/dart
+// and https://gitlab.com/IvanTurgenev/flutter_vscode_remote/-/tree/master
+{
+	"name": "Flutter (custom)",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update VARIANT to pick a Dart version
+		"args": {
+			"VARIANT": "2",
+			"UPGRADE_PACKAGES": "true"
+		}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"dart-code.dart-code",
+				"dart-code.flutter"
+			]
+		}
+	},
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
