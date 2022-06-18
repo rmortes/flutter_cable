@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   cable:
-    path: ../
+    git: https://github.com/rmortes/flutter_cable.git
 
 dev_dependencies:
   flutter_test:
