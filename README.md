@@ -1,2 +1,2 @@
-# flutter-cable
-A helper to get ferry to the other side of your project
+# Cable
+A helper to get Ferry to the other side of your project.
