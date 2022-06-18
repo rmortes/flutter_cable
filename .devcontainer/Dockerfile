@@ -12,9 +12,9 @@ ENV LANG C.UTF-8
 #
 # Android SDK
 # https://developer.android.com/studio#downloads
-ENV ANDROID_SDK_TOOLS_VERSION 6858069
+ENV ANDROID_SDK_TOOLS_VERSION 8512546
 ENV ANDROID_PLATFORM_VERSION 29
-ENV ANDROID_BUILD_TOOLS_VERSION 29.0.3
+ENV ANDROID_BUILD_TOOLS_VERSION 30.0.2
 ENV ANDROID_HOME=/opt/android-sdk-linux
 ENV ANDROID_SDK_ROOT="$ANDROID_HOME"
 ENV PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/tools/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/emulator
@@ -23,7 +23,7 @@ ENV PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/tools/bin:${ANDROID_HOME}/platfor
 # Flutter SDK
 # https://flutter.dev/docs/development/tools/sdk/releases?tab=linux
 ENV FLUTTER_CHANNEL="stable"
-ENV FLUTTER_VERSION="2.0.3"
+ENV FLUTTER_VERSION="2.10.5"
 # Set this variable as "enable" to auto config flutter web-server.
 # Make sure to use the needed channel and version for this.
 ENV FLUTTER_WEB="enable"
@@ -70,12 +70,12 @@ RUN cd /opt \
 	&& touch $HOME/.android/repositories.cfg \
 	&& sdkmanager platform-tools \
 	&& sdkmanager emulator \
-	&& sdkmanager "platforms;android-$ANDROID_PLATFORM_VERSION" "build-tools;$ANDROID_BUILD_TOOLS_VERSION"
+	&& sdkmanager "platforms;android-$ANDROID_PLATFORM_VERSION" "build-tools;$ANDROID_BUILD_TOOLS_VERSION" "cmdline-tools;latest"
 
 #
 # Flutter SDK
 RUN cd /opt \
-	&& curl -C - --output flutter.tar.xz https://storage.googleapis.com/flutter_infra/releases/${FLUTTER_CHANNEL}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_CHANNEL}.tar.xz \
+	&& curl -C - --output flutter.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/${FLUTTER_CHANNEL}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_CHANNEL}.tar.xz \
 	&& tar xf flutter.tar.xz -C . \
 	&& rm flutter.tar.xz \
 	&& yes | flutter doctor --android-licenses \
