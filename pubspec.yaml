@@ -7,10 +7,12 @@ repository: https://github.com/rmortes/flutter_cable
 homepage: rmort.es
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
+  ferry: ^0.10.4
+  ferry_flutter: ^0.5.4
   flutter:
     sdk: flutter
 
