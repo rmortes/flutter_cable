@@ -1,10 +1,6 @@
 library flutter_cable;
 
-export 'package:cable/fast_op/fast_op.dart'
-    show FastOp, ClientChangeNotifier, ClientProvider;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:cable/fast_op/fast_op.dart' show FastOp;
+export 'package:cable/fast_op/client_change_notifier.dart'
+    show ClientChangeNotifier;
+export 'package:cable/fast_op/client_provider.dart' show ClientProvider;
