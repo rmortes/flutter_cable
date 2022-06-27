@@ -7,12 +7,14 @@ class ClientProvider extends StatelessWidget {
   final Map<String, String> defaultHeaders;
   final Map<OperationType, FetchPolicy> defaultFetchPolicies;
   final String endpoint;
+  final Widget Function(BuildContext context, Widget? child)? builder;
   final Widget? child;
 
   ClientProvider({
     Key? key,
-    required this.child,
     required this.endpoint,
+    this.child,
+    this.builder,
     this.defaultHeaders = const {},
     this.defaultFetchPolicies = const {},
   }) : super(key: key);
@@ -24,6 +26,8 @@ class ClientProvider extends StatelessWidget {
         defaultFetchPolicies: defaultFetchPolicies,
         defaultHeaders: defaultHeaders,
       ),
+      child: child,
+      builder: builder,
     );
   }
 }
