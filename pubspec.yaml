@@ -1,7 +1,7 @@
 name: cable
 description: A helper to get Ferry to the other side of your project.
 
-version: 0.0.1
+version: 0.0.1+1
 repository: https://github.com/rmortes/flutter_cable
 homepage: rmort.es
 
@@ -10,11 +10,11 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  ferry: ^0.10.4
-  ferry_flutter: ^0.5.4
+  ferry: ^0.11.0+1
+  ferry_flutter: ^0.6.1
   flutter:
     sdk: flutter
-  gql_http_link: ^0.4.0
+  gql_http_link: ^0.4.4+1
   provider: ^6.0.3
 
 dev_dependencies:
