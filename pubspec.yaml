@@ -1,7 +1,7 @@
 name: cable
 description: A helper to get Ferry to the other side of your project.
 
-version: 0.0.1+1
+version: 0.0.1+2
 repository: https://github.com/rmortes/flutter_cable
 homepage: rmort.es
 publish_to: none
