@@ -1,6 +1,7 @@
 import 'package:ferry/ferry.dart';
 import 'package:flutter/foundation.dart';
 import 'package:gql_http_link/gql_http_link.dart';
+import 'package:gql_sse_link/gql_sse_link.dart';
 
 class ClientChangeNotifier extends ChangeNotifier {
   final String endpoint;
@@ -38,7 +39,12 @@ class ClientChangeNotifier extends ChangeNotifier {
   }
 
   Client _newClient() {
-    final link = HttpLink(endpoint, defaultHeaders: _headers);
+    final httpLink = HttpLink(endpoint, defaultHeaders: _headers);
+    final sseLink = SSELink(endpoint, defaultHeaders: _headers);
+    final link = Link.from([
+      httpLink,
+      sseLink,
+    ]);
     return Client(
       defaultFetchPolicies: defaultFetchPolicies,
       link: link,

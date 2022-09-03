@@ -4,6 +4,7 @@ description: A helper to get Ferry to the other side of your project.
 version: 0.0.1+1
 repository: https://github.com/rmortes/flutter_cable
 homepage: rmort.es
+publish_to: none
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
@@ -16,6 +17,12 @@ dependencies:
     sdk: flutter
   gql_http_link: ^0.4.4+1
   provider: ^6.0.3
+  gql_sse_link:
+    git:
+      url: https://github.com/rmortes/gql.git
+      path: links/gql_sse_link
+  gql: ^0.14.0
+  gql_link: ^0.5.0
 
 dev_dependencies:
   flutter_test:
